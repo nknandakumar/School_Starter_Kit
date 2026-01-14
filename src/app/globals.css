@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  /* We are using tailwind.config.ts for theme configuration */
+}
+
+/* Custom Utilities if needed */
