@@ -5,9 +5,8 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'luc
 const footerLinks = {
     quick: [
         { name: 'About Us', href: '/about' },
-        { name: 'Academics', href: '/academics' },
-        { name: 'Admissions', href: '/admissions' },
         { name: 'Careers', href: '/careers' },
+        { name: 'News & Events', href: '/events' },
     ],
     academics: [
         { name: 'Kindergarten', href: '/academics#kindergarten' },
@@ -15,91 +14,136 @@ const footerLinks = {
         { name: 'High School', href: '/academics#high-school' },
         { name: 'Results', href: '/achievements' },
     ],
+    admissions: [
+        { name: 'Admissions Process', href: '/admissions' },
+        { name: 'School Fees', href: '/admissions#fees' },
+        { name: 'FAQs', href: '/admissions#faq' },
+    ],
+    community: [
+        { name: 'Alumni', href: '#' },
+        { name: 'Parents', href: '#' },
+        { name: 'Students', href: '#' },
+    ]
 };
 
 export const Footer = () => {
     return (
-        <footer className="bg-neutral-900 text-neutral-300 pt-16 pb-8">
+        <footer className="bg-neutral-900 text-neutral-300 pt-16 pb-8 border-t border-neutral-800">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                    {/* Brand Column */}
-                    <div className="space-y-6">
-                        <Logo className="text-white" />
-                        <p className="text-neutral-400 text-sm leading-relaxed">
-                            Empowering students to become global leaders through academic excellence,
-                            strong values, and holistic development.
-                        </p>
-                        <div className="flex items-center gap-4">
-                            <a href="#" className="p-2 bg-neutral-800 rounded-full hover:bg-primary hover:text-white transition-colors">
-                                <Facebook className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-neutral-800 rounded-full hover:bg-primary hover:text-white transition-colors">
-                                <Instagram className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-neutral-800 rounded-full hover:bg-primary hover:text-white transition-colors">
-                                <Twitter className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-neutral-800 rounded-full hover:bg-primary hover:text-white transition-colors">
-                                <Linkedin className="w-5 h-5" />
-                            </a>
+
+                {/* Top Section: Logo & Contact */}
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 pb-12 border-b border-neutral-800">
+                    <div className="shrink-0">
+                        <Logo className="text-white scale-110 origin-left" />
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-sm text-neutral-400">
+                        <div className="flex items-start gap-3 max-w-xs">
+                            <MapPin className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                            <span>123 Education Lane, Academic City, State 560000</span>
                         </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-white font-heading font-semibold mb-6">Quick Links</h3>
-                        <ul className="space-y-4">
-                            {footerLinks.quick.map((link) => (
-                                <li key={link.name}>
-                                    <Link href={link.href} className="hover:text-secondary transition-colors text-sm">
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Academics */}
-                    <div>
-                        <h3 className="text-white font-heading font-semibold mb-6">Academics</h3>
-                        <ul className="space-y-4">
-                            {footerLinks.academics.map((link) => (
-                                <li key={link.name}>
-                                    <Link href={link.href} className="hover:text-secondary transition-colors text-sm">
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h3 className="text-white font-heading font-semibold mb-6">Contact Us</h3>
-                        <ul className="space-y-4 text-sm">
-                            <li className="flex items-start gap-3">
-                                <MapPin className="w-5 h-5 text-secondary shrink-0" />
-                                <span>123 Education Lane, Academic City, State 560000</span>
-                            </li>
-                            <li className="flex items-center gap-3">
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-secondary shrink-0" />
                                 <span>+91 98765 43210</span>
-                            </li>
-                            <li className="flex items-center gap-3">
+                            </div>
+                            <div className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-secondary shrink-0" />
                                 <span>admissions@school.edu</span>
-                            </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Middle Section: Links Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
+
+                    {/* Column 1 */}
+                    <div>
+                        <h3 className="text-white font-heading font-semibold mb-6">About Us</h3>
+                        <ul className="space-y-3">
+                            {footerLinks.quick.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 2 */}
+                    <div>
+                        <h3 className="text-white font-heading font-semibold mb-6">Academics</h3>
+                        <ul className="space-y-3">
+                            {footerLinks.academics.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 3 */}
+                    <div>
+                        <h3 className="text-white font-heading font-semibold mb-6">Admissions</h3>
+                        <ul className="space-y-3">
+                            {footerLinks.admissions.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 4 */}
+                    <div>
+                        <h3 className="text-white font-heading font-semibold mb-6">Community</h3>
+                        <ul className="space-y-3">
+                            {footerLinks.community.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
-                    <p>&copy; {new Date().getFullYear()} School Starter Kit. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+                {/* Bottom Section: Copyright & Socials */}
+                <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-6">
+
+                    <div className="flex flex-col items-center md:items-start gap-2 text-xs text-neutral-500">
+                        <p>&copy; {new Date().getFullYear()} School Starter Kit. All rights reserved.</p>
+                        <div className="flex gap-4">
+                            <Link href="/privacy" className="hover:text-neutral-300">Privacy Policy</Link>
+                            <span>|</span>
+                            <Link href="/terms" className="hover:text-neutral-300">Terms & Conditions</Link>
+                            <span>|</span>
+                            <Link href="/disclaimer" className="hover:text-neutral-300">Disclaimer</Link>
+                        </div>
                     </div>
+
+                    <div className="flex items-center gap-3">
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-neutral-900 hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <Facebook className="w-5 h-5" />
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-neutral-900 hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <Twitter className="w-4 h-4" />
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-neutral-900 hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <Instagram className="w-5 h-5" />
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-neutral-900 hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <Linkedin className="w-4 h-4" />
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </footer>

@@ -3,51 +3,78 @@ import { CheckCircle2 } from 'lucide-react';
 
 export const AboutSnapshot = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 mx-6 bg-white">
+            {/* Header Section */}
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Image Side */}
-                    <div className="relative">
-                        <div className="absolute -inset-4 bg-secondary/10 rounded-2xl transform rotate-3 -z-10" />
-                        <img
-                            src="https://images.unsplash.com/photo-1544531696-60c7f2010886?q=80&w=2070&auto=format&fit=crop"
-                            alt="Students Learning"
-                            className="rounded-2xl shadow-xl w-full object-cover h-[500px]"
-                        />
-                        <div className="absolute bottom-8 left-8 bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary">
-                            <p className="text-4xl font-bold text-primary mb-1">25+</p>
-                            <p className="text-sm font-medium text-neutral-600">Years of Excellence</p>
-                        </div>
-                    </div>
-
-                    {/* Content Side */}
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 leading-tight">
-                            A Legacy of Excellence in <span className="text-primary">Education</span>
+                <div className="flex flex-col items-center">
+                    <div className="text-center mb-10 max-w-3xl">
+                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary mb-4">
+                            A Legacy of Excellence <span className="text-[#f39200]">in Education</span>
                         </h2>
-                        <p className="text-lg text-neutral-600 leading-relaxed">
-                            At GEMS Academy, we believe in nurturing the whole child. Founded in 1998, we have established
-                            ourselves as a premier institution dedicated to academic brilliance and character formation.
-                            Our diverse community fosters a culture of inclusivity and global awareness.
+                        <p className="text-lg text-neutral-600 font-medium">
+                            Academics Thrive, Facilities Excel, and Memories Flourish!
                         </p>
+                    </div>
+                </div>
+            </div>
 
-                        <ul className="space-y-4 pt-2">
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-secondary shrink-0" />
-                                <span className="text-neutral-700 font-medium">Affiliated with CBSE Board (New Delhi)</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-secondary shrink-0" />
-                                <span className="text-neutral-700 font-medium">Award-winning "Best Holistic Education" 2024</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-secondary shrink-0" />
-                                <span className="text-neutral-700 font-medium">15:1 Student-Teacher Ratio</span>
-                            </li>
-                        </ul>
+            {/* Video Section - Full Width */}
+            <div className="w-full relative z-0">
+                <video
+                    src="https://ik.imagekit.io/6b0su29zd/%20shri%20Lakshmi%20Public%20school/From%20KlickPin%20CF%20_Video_%20ENT%20Infinite%20Zoom%20School%20_%20Seni%20musikvaluable826.mp4"
+                    className="w-full h-[600px] md:h-[600px] object-cover shadow-lg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                />
+            </div>
 
-                        <div className="pt-6">
-                            <Button size="lg" className="min-w-[160px]">Read Our Story</Button>
+            {/* Overlapping Content Card */}
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col items-center">
+                    <div className="w-full max-w-7xl -mt-24 relative z-10">
+                        <div className="bg-[#f39200] rounded-2xl shadow-xl p-8 md:p-12 text-white">
+                            <div className="flex flex-col md:flex-row gap-8 items-start">
+                                {/* Text Content */}
+                                <div className="flex-1 space-y-6">
+                                    <p className="text-lg leading-relaxed font-medium opacity-95">
+                                        At GEMS Academy, we believe in nurturing the whole child. Founded in 1998, we have established
+                                        ourselves as a premier institution dedicated to academic brilliance and character formation.
+                                        Our diverse community fosters a culture of inclusivity and global awareness.
+                                    </p>
+
+                                    <ul className="space-y-3">
+                                        <li className="flex items-center gap-3">
+                                            <CheckCircle2 className="w-6 h-6 shrink-0 text-white" />
+                                            <span className="font-medium">Affiliated with CBSE Board (New Delhi)</span>
+                                        </li>
+                                        <li className="flex items-center gap-3">
+                                            <CheckCircle2 className="w-6 h-6 shrink-0 text-white" />
+                                            <span className="font-medium">Award-winning "Best Holistic Education" 2024</span>
+                                        </li>
+                                        <li className="flex items-center gap-3">
+                                            <CheckCircle2 className="w-6 h-6 shrink-0 text-white" />
+                                            <span className="font-medium">15:1 Student-Teacher Ratio</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                {/* CTA / Side Content */}
+                                <div className="md:w-1/3 flex flex-col justify-center items-center md:items-end gap-6 text-center md:text-right">
+                                    <div>
+                                        <p className="text-5xl font-bold mb-2">25+</p>
+                                        <p className="text-lg font-medium opacity-90">Years of Excellence</p>
+                                    </div>
+                                    <Button
+                                        size="lg"
+                                        className="bg-white text-[#f39200] hover:bg-neutral-100 border-none min-w-[160px]"
+                                    >
+                                        Read Our Story
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
