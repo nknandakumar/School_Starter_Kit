@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 // Simplified Button without cva for now, or just manual classes
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-    size?: 'sm' | 'md' | 'lg';
+    size?: 'sm' | 'md' | 'lg' | 'icon';
     asChild?: boolean;
 }
 
@@ -26,6 +26,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             sm: "h-9 px-3",
             md: "h-10 px-4 py-2",
             lg: "h-11 px-8 rounded-md text-base",
+            icon: "h-10 w-10",
         };
 
         return (
